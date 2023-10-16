@@ -1,14 +1,14 @@
 import './index.css'
 
-const onePlace = props => {
+const OnePlace = props => {
   const {placeDetails} = props
   const {name, imgUrl} = placeDetails
 
   return (
     <li>
-      <p>{name}</p>
+      <p>{name}hello</p>
       <img src={imgUrl} alt={name} />
     </li>
   )
 }
-export default onePlace
+export default OnePlace

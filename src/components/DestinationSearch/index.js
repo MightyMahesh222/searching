@@ -1,5 +1,6 @@
 // Write your code here
 import {Component} from 'react'
+import OnePlace from '../DestinationItem'
 
 class DestinationSearch extends Component {
   state = {
@@ -27,7 +28,7 @@ class DestinationSearch extends Component {
         <input type="search" onChange={this.gettingInput} />
         <div>
           {destinationDetails.map(place => (
-            <onePlace key={place.id} placeDetails={place} />
+            <OnePlace key={place.id} placeDetails={place} />
           ))}
         </div>
       </ul>
