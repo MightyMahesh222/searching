@@ -6,7 +6,7 @@ const OnePlace = props => {
 
   return (
     <li>
-      <p>{name}hello</p>
+      <p>{name}</p>
       <img src={imgUrl} alt={name} />
     </li>
   )

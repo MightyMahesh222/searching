@@ -5,7 +5,6 @@ import OnePlace from '../DestinationItem'
 class DestinationSearch extends Component {
   state = {
     searchInput: '',
-    destinationDetails: this.props,
   }
 
   gettingInput = event => {
@@ -15,19 +14,19 @@ class DestinationSearch extends Component {
   }
 
   render() {
-    const {destinationDetails, searchInput} = this.state
-    const searchResult = destinationDetails.filter(
+    const {searchInput} = this.state
+    const {destinationsList} = this.props
+    const searchResult = destinationsList.filter(
       place =>
         place.location.toLowerCase().includes(searchInput.toLowerCase()) ||
         place.name.toLowerCase().includes(searchInput.toLowerCase()),
     )
-    console.log(searchResult)
     return (
       <ul>
         <h1>Destination List</h1>
         <input type="search" onChange={this.gettingInput} />
         <div>
-          {destinationDetails.map(place => (
+          {searchResult.map(place => (
             <OnePlace key={place.id} placeDetails={place} />
           ))}
         </div>
